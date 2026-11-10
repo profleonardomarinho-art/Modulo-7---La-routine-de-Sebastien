@@ -1,0 +1,1028 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La routine de Sébastien - Compréhension Orale</title>
+    <!-- Tailwind CSS para Estilização Responsiva e Moderna -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Estilos e animações customizadas */
+        @keyframes fadeInUp {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in-up {
+            animation: fadeInUp 0.5s ease-out forwards;
+        }
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-5px); }
+            75% { transform: translateX(5px); }
+        }
+        .animate-shake {
+            animation: shake 0.3s ease-in-out;
+        }
+        
+        /* Oculta elementos dinamicamente */
+        .hidden-section {
+            display: none !important;
+        }
+
+        /* Suavidade global */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans pb-24 min-h-screen">
+
+    <!-- SEÇÃO 1: BOAS VINDAS -->
+    <div id="welcome-view" class="min-h-screen flex items-center justify-center p-4 sm:p-8">
+        <div class="max-w-2xl w-full bg-white rounded-3xl shadow-xl overflow-hidden animate-fade-in-up">
+            <div class="bg-blue-900 px-8 py-12 text-center relative overflow-hidden">
+                <div class="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-white to-transparent"></div>
+                <h1 class="text-4xl md:text-5xl font-extrabold text-white mb-2 relative z-10">La routine de Sébastien</h1>
+                <h2 class="text-xl text-blue-200 font-medium relative z-10">Activité de compréhension orale</h2>
+            </div>
+            
+            <div class="p-8 md:p-12">
+                <p class="text-lg text-slate-700 leading-relaxed mb-8 text-center">
+                    Você consegue entender o que Sébastien faz durante a semana? Assista ao vídeo em francês, preste atenção aos dias da semana e às atividades mencionadas e coloque sua compreensão oral à prova!
+                </p>
+
+                <div class="space-y-6 mb-10">
+                    <div class="flex items-start">
+                        <div class="flex-shrink-0 w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 font-bold mr-4 mt-0.5">1</div>
+                        <p class="text-slate-700 text-lg">Assista ao vídeo em francês, inicialmente <strong class="text-blue-900">sem legendas</strong>.</p>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="flex-shrink-0 w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 font-bold mr-4 mt-0.5">2</div>
+                        <p class="text-slate-700 text-lg">Responda às perguntas de múltipla escolha. Você pode assistir ao vídeo novamente sempre que precisar.</p>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="flex-shrink-0 w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 font-bold mr-4 mt-0.5">3</div>
+                        <p class="text-slate-700 text-lg">Confira sua pontuação, assista à versão legendada e descubra as explicações das respostas.</p>
+                    </div>
+                </div>
+
+                <div class="bg-slate-50 border border-slate-100 rounded-xl p-4 flex items-center justify-center mb-10 text-slate-600 font-medium">
+                    <svg class="w-5 h-5 mr-2 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path></svg>
+                    Quiz • Compréhension orale • Niveau A1–A2
+                </div>
+
+                <button onclick="startActivity()" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-xl transition-colors duration-200 flex items-center justify-center group shadow-lg shadow-blue-200">
+                    <span class="text-lg">Commencer l'activité</span>
+                    <svg class="w-6 h-6 ml-2 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- SEÇÃO PRINCIPAL (APP) -->
+    <div id="app-view" class="hidden-section">
+        <!-- HEADER -->
+        <header class="bg-white border-b border-slate-200 sticky top-0 z-40 shadow-sm">
+            <div class="max-w-4xl mx-auto px-4 py-4 flex items-center justify-between">
+                <div class="flex items-center">
+                    <div class="w-10 h-10 bg-blue-900 rounded-lg flex items-center justify-center mr-3">
+                        <svg class="text-white w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path></svg>
+                    </div>
+                    <div>
+                        <h1 class="text-lg font-bold text-slate-900 leading-tight">La routine de Sébastien</h1>
+                        <p class="text-xs text-slate-500 uppercase tracking-wider font-semibold">Activité A1-A2</p>
+                    </div>
+                </div>
+                <div id="progress-counter" class="text-sm font-medium text-slate-500 bg-slate-100 px-3 py-1 rounded-full hidden sm:block">
+                    0/19 répondues
+                </div>
+            </div>
+        </header>
+
+        <main class="max-w-4xl mx-auto px-4 pt-8">
+            
+            <!-- VÍDEO 1: SEM LEGENDAS -->
+            <section id="video1-section" class="mb-12 animate-fade-in-up">
+                <div class="mb-6">
+                    <h2 class="text-3xl font-extrabold text-blue-900 mb-2">Écoute et réponds !</h2>
+                    <p class="text-slate-600 text-lg">Assista ao vídeo com atenção e tente identificar as informações sobre a rotina de Sébastien. Depois, responda às perguntas. As respostas serão corrigidas somente após a segunda exibição do vídeo.</p>
+                </div>
+                
+                <div class="w-full flex flex-col items-center">
+                    <div class="relative w-full overflow-hidden pb-[56.25%] rounded-xl shadow-md bg-slate-900">
+                        <iframe class="absolute top-0 left-0 w-full h-full border-0" 
+                                src="https://drive.google.com/file/d/1CQBo2cnZo_oatMe_Kxd0wpefNZAySlDK/preview" 
+                                title="La routine de Sébastien - Vidéo sans sous-titres" 
+                                allow="autoplay; fullscreen" 
+                                allowfullscreen 
+                                loading="lazy"
+                                referrerpolicy="strict-origin-when-cross-origin"
+                                style="border: 0;">
+                        </iframe>
+                    </div>
+                    <div class="mt-3 text-sm text-slate-500 flex flex-wrap justify-center text-center items-center bg-slate-50 py-2 px-4 rounded-xl border border-slate-200 w-full max-w-2xl">
+                        <span>Se o vídeo não carregar por restrições do navegador,</span>
+                        <a href="https://youtu.be/fvCAf5n3vXQ" target="_blank" rel="noopener noreferrer" class="ml-1 text-blue-600 font-semibold hover:text-blue-800 underline decoration-blue-300">
+                            clique aqui para assistir no YouTube
+                        </a>.
+                    </div>
+                </div>
+                
+                <div class="mt-6 flex items-center justify-center text-sm text-slate-500 bg-slate-100 py-2 px-4 rounded-lg border border-slate-200">
+                    <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+                    Esta é a versão do vídeo sem legendas.
+                </div>
+            </section>
+
+            <hr class="border-slate-200 my-10" />
+
+            <!-- QUESTIONÁRIO (19 Questões inseridas via JS) -->
+            <section id="quiz-section" class="mb-12">
+                <div class="text-center mb-10">
+                    <h2 class="text-3xl font-extrabold text-slate-900 mb-2">As-tu bien compris ?</h2>
+                    <p class="text-slate-600 max-w-2xl mx-auto">Escolha uma resposta para cada pergunta. Você pode consultar uma dica se precisar. A correção será apresentada mais tarde.</p>
+                </div>
+
+                <div id="questions-container" class="space-y-8">
+                    <!-- Perguntas serão renderizadas aqui pelo JavaScript -->
+                </div>
+                
+                <!-- BOTÃO DE VALIDAÇÃO -->
+                <div id="validation-container" class="mt-12 p-8 bg-white rounded-2xl shadow-sm border border-slate-200 text-center">
+                    <h3 class="text-xl font-bold text-slate-900 mb-4">Avez-vous terminé ?</h3>
+                    <div id="validation-error" class="hidden-section mb-6 p-4 bg-red-50 text-red-700 rounded-xl font-medium inline-block w-full max-w-md">
+                        <!-- Mensagem de erro -->
+                    </div>
+                    <button onclick="validateAnswers()" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-10 rounded-xl transition-colors duration-200 text-lg shadow-md w-full sm:w-auto">
+                        Valider mes réponses
+                    </button>
+                </div>
+            </section>
+
+            <!-- RESULTADO E VÍDEO 2 (Oculto inicialmente) -->
+            <section id="post-validation-section" class="hidden-section animate-fade-in-up">
+                
+                <!-- PONTUAÇÃO -->
+                <div id="score-card" class="bg-gradient-to-br from-blue-900 to-blue-800 rounded-3xl shadow-xl p-8 sm:p-12 text-center text-white relative overflow-hidden mb-12">
+                    <div class="absolute top-0 right-0 -mr-8 -mt-8 w-40 h-40 rounded-full bg-blue-700 opacity-50 blur-2xl"></div>
+                    <div class="absolute bottom-0 left-0 -ml-8 -mb-8 w-32 h-32 rounded-full bg-blue-600 opacity-50 blur-2xl"></div>
+                    
+                    <h2 class="text-2xl font-bold text-blue-200 mb-2 relative z-10 uppercase tracking-widest text-sm">Ton résultat</h2>
+                    <div class="text-6xl sm:text-7xl font-extrabold mb-4 relative z-10">
+                        <span id="score-value">0</span> <span class="text-3xl text-blue-300 font-medium">/ 19</span>
+                    </div>
+                    <p class="text-xl font-medium mb-6 relative z-10">Tu as obtenu <span id="score-text-value">0</span> bonnes réponses sur 19 !</p>
+                    
+                    <div class="w-full max-w-md mx-auto h-3 bg-blue-950/50 rounded-full mb-6 relative z-10 overflow-hidden">
+                        <div id="score-progress" class="h-full bg-yellow-400 rounded-full transition-all duration-1000 ease-out" style="width: 0%"></div>
+                    </div>
+
+                    <div class="relative z-10">
+                        <h3 id="score-message-fr" class="text-2xl font-bold">...</h3>
+                        <p id="score-message-pt" class="text-blue-200 mt-1 text-sm">...</p>
+                    </div>
+                </div>
+
+                <!-- VÍDEO 2: COM LEGENDAS -->
+                <div class="mb-12">
+                    <hr class="border-slate-200 mb-12" />
+                    <div class="mb-6">
+                        <h2 class="text-3xl font-extrabold text-blue-900 mb-2">Regarde avec les sous-titres !</h2>
+                        <p class="text-slate-600 text-lg">Agora que você já conhece sua pontuação, assista novamente ao vídeo, desta vez com legendas em francês e tradução em português. Compare o que você entendeu na primeira escuta com as informações apresentadas.</p>
+                    </div>
+                    
+                    <div class="w-full flex flex-col items-center">
+                        <div class="relative w-full overflow-hidden pb-[56.25%] rounded-xl shadow-md bg-slate-900">
+                            <iframe class="absolute top-0 left-0 w-full h-full border-0" 
+                                    src="https://drive.google.com/file/d/1CcNSm9rGEddyHC8b8CEXjTCmr0fl59e2/preview" 
+                                    title="La routine de Sébastien - Vidéo avec sous-titres" 
+                                    allow="autoplay; fullscreen" 
+                                    allowfullscreen 
+                                    loading="lazy"
+                                    referrerpolicy="strict-origin-when-cross-origin"
+                                    style="border: 0;">
+                            </iframe>
+                        </div>
+                        <div class="mt-3 text-sm text-slate-500 flex flex-wrap justify-center text-center items-center bg-slate-50 py-2 px-4 rounded-xl border border-slate-200 w-full max-w-2xl">
+                            <span>Se o vídeo não carregar por restrições do navegador,</span>
+                            <a href="https://youtu.be/Zpi9-eQlk3o" target="_blank" rel="noopener noreferrer" class="ml-1 text-blue-600 font-semibold hover:text-blue-800 underline decoration-blue-300">
+                                clique aqui para assistir no YouTube
+                            </a>.
+                        </div>
+                    </div>
+                    
+                    <div id="corrections-action-container" class="mt-8 text-center bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
+                        <p class="text-slate-600 mb-6">Após assistir à versão legendada, clique abaixo para conferir o que você errou.</p>
+                        <button onclick="showCorrections()" class="bg-blue-900 hover:bg-blue-800 text-white font-bold py-3 px-8 rounded-xl transition-colors shadow-md w-full sm:w-auto">
+                            Já assisti, ver correções (Voir les corrections)
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CABEÇALHO DA CORREÇÃO -->
+            <div id="correction-header" class="hidden-section mb-12 text-center animate-fade-in-up bg-slate-100 p-8 rounded-2xl border border-slate-200">
+                <h2 class="text-3xl font-extrabold text-slate-900 mb-4">Comprends tes erreurs !</h2>
+                <div id="perfect-score-msg" class="hidden-section bg-green-100 border border-green-300 text-green-800 p-6 rounded-xl inline-block max-w-2xl">
+                    <h3 class="text-xl font-bold mb-2 flex items-center justify-center">
+                        <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path></svg> 
+                        Félicitations ! 19/19 !
+                    </h3>
+                    <p>Você acertou todas as perguntas. Excelente compreensão oral! Não há erros para corrigir.</p>
+                </div>
+                <p id="errors-msg" class="text-slate-600 text-lg max-w-2xl mx-auto">
+                    Role a página para cima para conferir as questões que você não acertou. Entenda o que Sébastien realmente disse no vídeo lendo as explicações.
+                </p>
+                <div class="mt-8">
+                    <button onclick="scrollToEvaluation()" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-xl transition-colors shadow-md">
+                        Continuar para Avaliação
+                    </button>
+                </div>
+            </div>
+
+            <!-- AVALIAÇÃO DA ATIVIDADE -->
+            <section id="evaluation-section" class="hidden-section mb-12 animate-fade-in-up">
+                <hr class="border-slate-200 mb-12" />
+                <div class="text-center mb-10">
+                    <h2 class="text-3xl font-extrabold text-blue-900 mb-2">Évalue ton expérience !</h2>
+                    <p class="text-slate-600 max-w-2xl mx-auto">Antes de finalizar, conte como foi sua experiência. Suas respostas ajudarão o professor a entender quais aspectos da atividade foram mais fáceis ou difíceis para você.</p>
+                </div>
+
+                <div class="space-y-6 max-w-3xl mx-auto">
+                    <!-- Critério 1 -->
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
+                        <h3 class="text-lg font-bold text-slate-800 mb-1">Compreensão oral</h3>
+                        <p class="text-sm text-slate-500 mb-4">Como foi entender o que Sébastien dizia durante a primeira reprodução (sem legendas)?</p>
+                        <div class="flex flex-wrap justify-between gap-2" id="eval-oral">
+                            <!-- Botões gerados via JS -->
+                        </div>
+                        <div class="flex justify-between mt-2 text-xs text-slate-400 font-medium px-1">
+                            <span>0 - Muito difícil</span><span>5 - Muito fácil</span>
+                        </div>
+                    </div>
+                    <!-- Critério 2 -->
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
+                        <h3 class="text-lg font-bold text-slate-800 mb-1">Compreensão escrita</h3>
+                        <p class="text-sm text-slate-500 mb-4">As legendas ajudaram você a compreender melhor as frases em francês na segunda reprodução?</p>
+                        <div class="flex flex-wrap justify-between gap-2" id="eval-written">
+                            <!-- Botões gerados via JS -->
+                        </div>
+                        <div class="flex justify-between mt-2 text-xs text-slate-400 font-medium px-1">
+                            <span>0 - Muito difícil</span><span>5 - Muito fácil</span>
+                        </div>
+                    </div>
+                    <!-- Critério 3 -->
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200">
+                        <h3 class="text-lg font-bold text-slate-800 mb-1">Interpretação do questionário</h3>
+                        <p class="text-sm text-slate-500 mb-4">Como foi interpretar os enunciados e as opções de resposta em francês?</p>
+                        <div class="flex flex-wrap justify-between gap-2" id="eval-interpretation">
+                            <!-- Botões gerados via JS -->
+                        </div>
+                        <div class="flex justify-between mt-2 text-xs text-slate-400 font-medium px-1">
+                            <span>0 - Muito difícil</span><span>5 - Muito fácil</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="evaluation-action-container" class="mt-10 text-center">
+                    <div id="eval-error" class="hidden-section mb-4 p-3 bg-red-50 text-red-700 rounded-lg text-sm inline-block font-medium"></div>
+                    <br>
+                    <button onclick="finishActivity()" class="bg-green-600 hover:bg-green-700 text-white font-bold py-4 px-12 rounded-xl transition-colors duration-200 text-lg shadow-lg">
+                        Terminer l'activité
+                    </button>
+                </div>
+            </section>
+
+            <!-- TELA FINAL -->
+            <section id="final-section" class="hidden-section mb-12 animate-fade-in-up">
+                <div class="bg-white border-4 border-blue-100 rounded-3xl p-8 sm:p-12 shadow-xl relative overflow-hidden">
+                    <div class="absolute top-0 right-0 p-4">
+                        <svg class="w-24 h-24 text-blue-50 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path></svg>
+                    </div>
+                    
+                    <div class="text-center mb-8 relative z-10">
+                        <h2 class="text-4xl font-extrabold text-blue-900 mb-2">Félicitations !</h2>
+                        <h3 class="text-xl text-slate-600">Tu as terminé l'activité !</h3>
+                    </div>
+
+                    <div class="max-w-md mx-auto mb-8 relative z-10">
+                        <label class="block text-sm font-bold text-slate-700 mb-2">Seu nome (opcional, para o relatório):</label>
+                        <input type="text" id="student-name" placeholder="Digite seu nome..." class="w-full p-3 border border-slate-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none" />
+                    </div>
+
+                    <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200 mb-8 max-w-2xl mx-auto relative z-10">
+                        <h4 class="text-center font-bold text-slate-800 mb-6 uppercase tracking-wider text-sm">Resumo do Desempenho</h4>
+                        
+                        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-6 text-center">
+                            <div class="bg-white p-3 rounded-xl border border-slate-100 shadow-sm">
+                                <div class="text-2xl font-bold text-blue-600" id="final-score">0/19</div>
+                                <div class="text-xs text-slate-500 font-medium">Acertos</div>
+                            </div>
+                            <div class="bg-white p-3 rounded-xl border border-slate-100 shadow-sm">
+                                <div class="text-2xl font-bold text-red-500" id="final-errors">0</div>
+                                <div class="text-xs text-slate-500 font-medium">Erros</div>
+                            </div>
+                            <div class="bg-white p-3 rounded-xl border border-slate-100 shadow-sm">
+                                <div class="text-2xl font-bold text-blue-900" id="final-percentage">0%</div>
+                                <div class="text-xs text-slate-500 font-medium">Aproveitamento</div>
+                            </div>
+                            <div class="bg-white p-3 rounded-xl border border-slate-100 shadow-sm">
+                                <div class="text-2xl font-bold text-yellow-600" id="final-hints">0</div>
+                                <div class="text-xs text-slate-500 font-medium">Dicas Usadas</div>
+                            </div>
+                        </div>
+
+                        <div class="border-t border-slate-200 pt-4 flex justify-around text-sm">
+                            <div class="text-center">
+                                <div class="font-bold text-slate-800" id="res-oral">-</div>
+                                <div class="text-slate-500 text-xs">Comp. Oral</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="font-bold text-slate-800" id="res-written">-</div>
+                                <div class="text-slate-500 text-xs">Comp. Escrita</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="font-bold text-slate-800" id="res-interpretation">-</div>
+                                <div class="text-slate-500 text-xs">Interpretação</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col sm:flex-row justify-center gap-4 relative z-10 max-w-2xl mx-auto">
+                        <div class="w-full text-center">
+                            <button onclick="copyToClipboard()" id="btn-copy" class="w-full flex items-center justify-center font-bold py-4 px-6 rounded-xl transition-all shadow-md bg-blue-600 hover:bg-blue-700 text-white">
+                                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
+                                <span id="txt-copy">Copier mon résultat</span>
+                            </button>
+                            <p id="copy-success-msg" class="hidden-section text-green-600 text-sm mt-2 font-medium">Agora você pode enviar o resultado ao seu professor pelo WhatsApp.</p>
+                        </div>
+                        <button onclick="restartActivity()" class="w-full sm:w-auto flex flex-shrink-0 items-center justify-center bg-white hover:bg-slate-50 text-slate-700 border-2 border-slate-200 font-bold py-4 px-6 rounded-xl transition-colors">
+                            <svg class="w-5 h-5 mr-2 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path></svg>
+                            Recommencer
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <!-- JAVASCRIPT: DADOS E LÓGICA -->
+    <script>
+        // --- BANCO DE QUESTÕES ---
+        const QUESTIONS = [
+            {
+                id: 1,
+                question: "Où est-ce que Sébastien va le lundi, et pourquoi ?",
+                options: [
+                    "Le lundi, il va au supermarché pour acheter du café et du vin.",
+                    "Le lundi, il va au marché pour acheter du poisson et du pain.",
+                    "Le lundi, il va au supermarché pour acheter des fruits et des légumes.",
+                    "Le lundi, il va à la boulangerie pour acheter du pain et de la tarte."
+                ],
+                correctIndex: 2,
+                hint: "Il achète des produits qui périment rapidement.<br/>(Ele compra produtos que estragam rapidamente.)",
+                explanation: "Sébastien diz: \"Le lundi, je vais au supermarché pour acheter des fruits et des légumes.\" Portanto, ele vai ao supermercado para comprar frutas e legumes, não café e vinho ou outros produtos."
+            },
+            {
+                id: 2,
+                question: "Ensuite, où est-ce que Sébastien va ?",
+                options: [
+                    "Ensuite, il va au parc.",
+                    "Ensuite, il va au centre-ville.",
+                    "Ensuite, il va à la gare.",
+                    "Ensuite, il va à la bibliothèque."
+                ],
+                correctIndex: 1,
+                hint: "Il va dans un endroit où il y a beaucoup de voitures, de magasins et de personnes.<br/>(Ele vai a um lugar onde há muitos carros, lojas e pessoas.)",
+                explanation: "Ele diz: \"Ensuite, je vais au centre-ville...\" A expressão \"au centre-ville\" indica que ele vai ao centro da cidade."
+            },
+            {
+                id: 3,
+                question: "Pourquoi est-ce qu'il va là-bas ?",
+                options: [
+                    "Il va là-bas pour acheter des vêtements.",
+                    "Il va là-bas pour retrouver ses amis.",
+                    "Il va là-bas pour prendre un train.",
+                    "Il va là-bas pour payer des factures."
+                ],
+                correctIndex: 3,
+                hint: "Il doit payer l'eau, l'électricité et Internet tous les mois.<br/>(Ele deve pagar a água, a eletricidade e a internet todos os meses.)",
+                explanation: "Sébastien explica: \"Ensuite, je vais au centre-ville pour payer des factures.\" Isso significa que ele vai ao centro da cidade para pagar contas."
+            },
+            {
+                id: 4,
+                question: "Où est-ce que Sébastien va le mardi ?",
+                options: [
+                    "Le mardi, il va à l'université.",
+                    "Le mardi, il va au commissariat de police.",
+                    "Le mardi, il va à la bibliothèque.",
+                    "Le mardi, il va à la salle de sport."
+                ],
+                correctIndex: 0,
+                hint: "C'est un endroit où les étudiants peuvent continuer les études après le lycée.<br/>(É um lugar onde os estudantes podem continuar os estudos depois do ensino médio.)",
+                explanation: "Ele diz: \"Le mardi, je vais à l'université pour étudier.\" Na terça-feira, ele vai à universidade."
+            },
+            {
+                id: 5,
+                question: "Pourquoi est-ce que Sébastien étudie ?",
+                options: [
+                    "Il étudie parce qu'il veut travailler à l'hôpital comme médecin.",
+                    "Il étudie parce qu'il veut travailler au commissariat de police comme policier.",
+                    "Il étudie parce qu'il veut travailler à l'université comme professeur.",
+                    "Il étudie parce qu'il veut travailler dans un restaurant comme cuisinier."
+                ],
+                correctIndex: 1,
+                hint: "C'est une bonne profession pour protéger les personnes.<br/>(É uma boa profissão para proteger as pessoas.)",
+                explanation: "Ele diz: \"J'étudie parce que je veux travailler au commissariat de police comme policier.\" Portanto, ele estuda porque deseja trabalhar em uma delegacia de polícia como policial."
+            },
+            {
+                id: 6,
+                question: "Qu'est-ce que Sébastien fait le mercredi ?",
+                options: [
+                    "Le mercredi, il joue au football.",
+                    "Le mercredi, il fait de la musculation.",
+                    "Le mercredi, il fait du yoga.",
+                    "Le mercredi, il fait de la natation."
+                ],
+                correctIndex: 2,
+                hint: "C'est une activité calme avec des exercices de respiration.<br/>(É uma atividade tranquila com exercícios de respiração.)",
+                explanation: "Sébastien diz: \"Le mercredi, je fais du yoga à la salle de sport.\" Portanto, a atividade realizada na quarta-feira é ioga."
+            },
+            {
+                id: 7,
+                question: "Où est-ce qu'il fait cette activité ?",
+                options: [
+                    "Il fait cette activité chez lui.",
+                    "Il fait cette activité au parc.",
+                    "Il fait cette activité à l'université.",
+                    "Il fait cette activité à la salle de sport."
+                ],
+                correctIndex: 3,
+                hint: "Dans cet endroit, il y a des machines pour faire du sport.<br/>(Nesse lugar, há aparelhos para praticar esportes.)",
+                explanation: "Na frase \"Le mercredi, je fais du yoga à la salle de sport\", Sébastien informa que pratica a atividade na academia."
+            },
+            {
+                id: 8,
+                question: "Pourquoi est-ce qu'il aime faire cette activité ?",
+                options: [
+                    "Il aime faire cette activité pour se relaxer.",
+                    "Il aime faire cette activité pour rencontrer des amis.",
+                    "Il aime faire cette activité pour apprendre le français.",
+                    "Il aime faire cette activité pour gagner de l'argent."
+                ],
+                correctIndex: 0,
+                hint: "Après cette activité, il se sent plus calme et il oublie le stress.<br/>(Depois dessa atividade, ele se sente mais tranquilo e esquece o estresse.)",
+                explanation: "Sébastien diz: \"J'aime faire du yoga pour me relaxer.\" Isso significa que ele gosta de fazer ioga para relaxar."
+            },
+            {
+                id: 9,
+                question: "Qu'est-ce que Sébastien fait le jeudi ?",
+                options: [
+                    "Le jeudi, il déjeune à la maison avec sa famille.",
+                    "Le jeudi, il prépare le dîner avec ses amis.",
+                    "Le jeudi, il dîne dans un restaurant près de son travail.",
+                    "Le jeudi, il prend son petit-déjeuner dans un café."
+                ],
+                correctIndex: 2,
+                hint: "Après le travail, il mange le soir dans un endroit où un chef prépare des repas pour les clients.<br/>(Depois do trabalho, ele come à noite em um lugar onde um chef prepara refeições para os clientes.)",
+                explanation: "Ele diz: \"Le jeudi, je dîne dans un restaurant près de mon travail.\" Portanto, às quintas-feiras, Sébastien janta em um restaurante perto do seu trabalho."
+            },
+            {
+                id: 10,
+                question: "C'est quel type de restaurant ?",
+                options: [
+                    "C'est un restaurant japonais.",
+                    "C'est un restaurant italien.",
+                    "C'est un restaurant brésilien.",
+                    "C'est un restaurant français."
+                ],
+                correctIndex: 1,
+                hint: "Dans ce restaurant, on peut manger des pizzas, des pâtes et de la lasagne.<br/>(Nesse restaurante, podemos comer pizzas, massas e lasanha.)",
+                explanation: "Ele afirma: \"C'est un restaurant italien.\" Portanto, trata-se de um restaurante italiano."
+            },
+            {
+                id: 11,
+                question: "Quelle cuisine est-ce que Sébastien adore ?",
+                options: [
+                    "Il adore la cuisine italienne.",
+                    "Il adore la cuisine française.",
+                    "Il adore la cuisine brésilienne.",
+                    "Il adore la cuisine japonaise."
+                ],
+                correctIndex: 0,
+                hint: "Le pays de cette cuisine est célèbre pour sa forme de botte !<br/>(O país dessa culinária é famoso pelo seu formato de bota!)",
+                explanation: "Sébastien diz claramente: \"J'adore la cuisine italienne !\" Isso significa que ele adora a culinária italiana."
+            },
+            {
+                id: 12,
+                question: "Où est Sébastien dans la scène suivante ?",
+                options: [
+                    "Il est dans une banque.",
+                    "Il est dans une pharmacie.",
+                    "Il est dans un supermarché.",
+                    "Il est à la poste."
+                ],
+                correctIndex: 3,
+                hint: "C'est un endroit où vous pouvez envoyer des lettres et des colis.<br/>(É um lugar onde você pode enviar cartas e encomendas.)",
+                explanation: "A cena seguinte mostra Sébastien nos Correios. Ele também menciona esse local na frase \"Le vendredi, je vais parfois à la poste pour récupérer des colis.\""
+            },
+            {
+                id: 13,
+                question: "Qu'est-ce que Sébastien fait parfois le vendredi ?",
+                options: [
+                    "Le vendredi, il va à la banque pour retirer de l'argent.",
+                    "Le vendredi, il va à la poste pour récupérer des colis.",
+                    "Le vendredi, il va au supermarché pour acheter des légumes.",
+                    "Le vendredi, il va à la bibliothèque pour lire des livres."
+                ],
+                correctIndex: 1,
+                hint: "Quand tu achètes un produit sur Internet, tu dois parfois le récuperer dans un autre endroit.<br/>(Quando você compra um produto pela internet, às vezes você deve retirá-lo em outro lugar.)",
+                explanation: "Ele diz: \"Le vendredi, je vais parfois à la poste pour récupérer des colis.\" A expressão \"récupérer des colis\" significa retirar ou pegar encomendas."
+            },
+            {
+                id: 14,
+                question: "Vrai ou faux ?\nSébastien achète beaucoup de choses dans les magasins, mais rien sur Internet.",
+                options: [
+                    "C'est vrai, parce qu'il dit qu'il achète tout dans les magasins.",
+                    "C'est vrai, parce qu'il dit qu'il n'utilise jamais Internet pour acheter.",
+                    "C'est faux, parce qu'il dit qu'il achète beaucoup de choses sur Internet.",
+                    "C'est faux, parce qu'il dit qu'il n'achète rien."
+                ],
+                correctIndex: 2,
+                hint: "Aujourd'hui, on peut faire du shopping sur le téléphone ou sur l'ordinateur.<br/>(Hoje em dia, podemos fazer compras no celular ou no computador.)",
+                explanation: "A afirmação é falsa porque Sébastien diz: \"J'achète beaucoup de choses sur Internet.\" Portanto, ele compra muitas coisas pela internet. Ele não afirma que nunca compra nada."
+            },
+            {
+                id: 15,
+                question: "Où est-ce que Sébastien va le samedi, et pourquoi ?",
+                options: [
+                    "Le samedi, il va à la salle de sport pour faire de la musculation.",
+                    "Le samedi, il va au parc pour courir.",
+                    "Le samedi, il va à la bibliothèque pour lire des livres.",
+                    "Le samedi, il va au stade pour jouer au football."
+                ],
+                correctIndex: 0,
+                hint: "C'est un endroit parfait pour les muscles.<br/>(É um lugar perfeito para os músculos.)",
+                explanation: "Ele diz: \"Le samedi, je vais à la salle de sport pour faire de la musculation.\" Portanto, ele vai à academia para fazer musculação."
+            },
+            {
+                id: 16,
+                question: "Où est-ce que Sébastien va le dimanche, et pourquoi ?",
+                options: [
+                    "Le dimanche, il va au parc pour faire du vélo.",
+                    "Le dimanche, il va à la plage pour se promener.",
+                    "Le dimanche, il va au stade pour jouer au tennis.",
+                    "Le dimanche, il va à la piscine du club pour nager."
+                ],
+                correctIndex: 3,
+                hint: "Dans cet endroit, il y a de l'eau, mais ce n'est ni la mer ni une rivière.<br/>(Nesse lugar, há água, mas não é o mar nem um rio.)",
+                explanation: "Sébastien diz: \"Le dimanche, je vais à la piscine du club pour nager.\" Portanto, ele vai à piscina do clube para nadar."
+            },
+            {
+                id: 17,
+                question: "Quand est-ce que Sébastien adore faire du sport ?",
+                options: [
+                    "Il adore faire du sport le lundi et le mardi.",
+                    "Il adore faire du sport le week-end.",
+                    "Il adore faire du sport tous les matins.",
+                    "Il adore faire du sport seulement le mercredi."
+                ],
+                correctIndex: 1,
+                hint: "Ce sont deux jours de la semaine où beaucoup de personnes ne travaillent pas.<br/>(São dois dias da semana em que muitas pessoas não trabalham.)",
+                explanation: "Ele afirma: \"J'adore faire du sport le week-end.\" A expressão \"le week-end\" significa \"nos fins de semana\"."
+            },
+            {
+                id: 18,
+                question: "À la fin de la vidéo, qu'est-ce que Sébastien fait ?",
+                options: [
+                    "Il prépare le dîner avec sa femme.",
+                    "Il sort avec ses amis.",
+                    "Il regarde la télévision avec sa femme.",
+                    "Il lit un livre avec sa femme."
+                ],
+                correctIndex: 2,
+                hint: "Il passe un moment avec sa femme devant un écran, à la maison.<br/>(Ele passa um momento com sua esposa diante de uma tela, em casa.)",
+                explanation: "Ele diz: \"Enfin, je regarde la télévision avec ma femme.\" Portanto, ele assiste à televisão com sua esposa."
+            },
+            {
+                id: 19,
+                question: "Qu'est-ce qu'ils regardent ensemble ?",
+                options: [
+                    "Ils regardent un film ou une série.",
+                    "Ils regardent les informations.",
+                    "Ils regardent des dessins animés.",
+                    "Ils regardent des vidéos de sport."
+                ],
+                correctIndex: 0,
+                hint: "Ce sont des histoires avec des personnages. Certaines durent deux heures et d'autres ont des épisodes.<br/>(São histórias com personagens. Algumas duram duas horas e outras têm episódios.)",
+                explanation: "Na última parte, Sébastien diz: \"On regarde un film ou une série.\" Isso significa que eles assistem juntos a um filme ou a uma série."
+            }
+        ];
+
+        // --- ESTADO DA APLICAÇÃO ---
+        let appState = 'WELCOME'; // WELCOME, QUIZ, VALIDATED, CORRECTION, FINAL
+        let answers = {};
+        let hintsUsed = new Set();
+        let openHints = new Set();
+        let score = 0;
+        let evaluations = { oral: null, written: null, interpretation: null };
+
+        // Ícones SVG inline para as marcações
+        const ICON_CHECK = `<svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>`;
+        const ICON_CROSS = `<svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>`;
+
+        // --- INICIALIZAÇÃO E RENDERIZAÇÃO ---
+        
+        function initApp() {
+            renderQuestions();
+            renderEvaluations();
+        }
+
+        function renderQuestions() {
+            const container = document.getElementById('questions-container');
+            container.innerHTML = '';
+
+            QUESTIONS.forEach((q, index) => {
+                const qNum = String(index + 1).padStart(2, '0');
+                
+                // Opções
+                let optionsHTML = '';
+                q.options.forEach((opt, optIdx) => {
+                    optionsHTML += `
+                        <button id="btn-${q.id}-${optIdx}" onclick="handleAnswer(${q.id}, ${optIdx})" class="w-full text-left p-4 rounded-xl border-2 transition-all duration-200 flex items-start bg-white border-slate-200 hover:border-blue-300 hover:bg-slate-50 text-slate-700 option-btn-${q.id}">
+                            <div id="icon-${q.id}-${optIdx}" class="flex-shrink-0 w-6 h-6 rounded-full border-2 mr-3 flex items-center justify-center mt-0.5 border-slate-300"></div>
+                            <span class="leading-relaxed">${opt}</span>
+                        </button>
+                    `;
+                });
+
+                // Estrutura completa da questão
+                const qHTML = `
+                    <div id="question-card-${q.id}" class="bg-white p-6 sm:p-8 rounded-2xl shadow-sm border border-slate-200 transition-all duration-300 relative">
+                        <div class="flex items-center mb-4">
+                            <span class="bg-slate-100 text-slate-600 text-sm font-bold px-3 py-1 rounded-full uppercase tracking-wider">
+                                Question ${qNum}
+                            </span>
+                            <span id="badge-correct-${q.id}" class="hidden-section ml-auto flex items-center text-green-600 font-medium text-sm">
+                                <svg class="w-5 h-5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg> Bonne réponse !
+                            </span>
+                            <span id="badge-wrong-${q.id}" class="hidden-section ml-auto flex items-center text-red-500 font-medium text-sm">
+                                <svg class="w-5 h-5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg> Erreur
+                            </span>
+                        </div>
+                        
+                        <h3 class="text-xl font-bold text-slate-900 mb-6 whitespace-pre-line">${q.question.replace(/\n/g, '<br/>')}</h3>
+                        
+                        <div class="space-y-3">
+                            ${optionsHTML}
+                        </div>
+
+                        <!-- Dica -->
+                        <div id="hint-wrapper-${q.id}" class="mt-6">
+                            <button id="btn-hint-${q.id}" onclick="toggleHint(${q.id})" class="flex items-center text-sm font-medium transition-colors px-3 py-1.5 rounded-lg text-yellow-600 hover:bg-yellow-50">
+                                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path></svg>
+                                Astuce
+                            </button>
+                            <div id="hint-text-${q.id}" class="hidden-section mt-3 p-4 bg-yellow-50 border border-yellow-200 rounded-xl text-yellow-900 text-sm animate-fade-in-up">
+                                ${q.hint}
+                            </div>
+                        </div>
+
+                        <!-- Explicação (Exibida apenas na correção se errar) -->
+                        <div id="explanation-${q.id}" class="hidden-section mt-6 p-5 bg-slate-50 border border-slate-200 rounded-xl">
+                            <h4 class="font-bold text-slate-800 mb-2 flex items-center">
+                                <svg class="w-5 h-5 mr-2 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path></svg>
+                                Comprends ton erreur :
+                            </h4>
+                            <p class="text-slate-700 text-sm mb-3"><strong>Você escolheu:</strong> <span id="wrong-choice-text-${q.id}"></span></p>
+                            <p class="text-slate-700 text-sm mb-4"><strong>Resposta correta:</strong> ${q.options[q.correctIndex]}</p>
+                            <div class="bg-white p-4 rounded-lg border border-slate-200 text-sm text-slate-800 shadow-sm">
+                                ${q.explanation}
+                            </div>
+                        </div>
+                    </div>
+                `;
+                container.insertAdjacentHTML('beforeend', qHTML);
+            });
+        }
+
+        function renderEvaluations() {
+            const buildEvalButtons = (id, property) => {
+                let html = '';
+                for(let i=0; i<=5; i++) {
+                    html += `<button id="btn-eval-${property}-${i}" onclick="setEvaluation('${property}', ${i})" class="eval-btn-${property} flex-1 py-3 min-w-[3rem] rounded-lg font-bold text-lg transition-colors border bg-slate-50 text-slate-600 border-slate-200 hover:bg-slate-100">${i}</button>`;
+                }
+                document.getElementById(id).innerHTML = html;
+            };
+            buildEvalButtons('eval-oral', 'oral');
+            buildEvalButtons('eval-written', 'written');
+            buildEvalButtons('eval-interpretation', 'interpretation');
+        }
+
+        // --- AÇÕES DO USUÁRIO ---
+
+        function startActivity() {
+            document.getElementById('welcome-view').classList.add('hidden-section');
+            document.getElementById('app-view').classList.remove('hidden-section');
+            appState = 'QUIZ';
+            window.scrollTo(0, 0);
+        }
+
+        function handleAnswer(qId, optIdx) {
+            if (appState !== 'QUIZ') return;
+            
+            answers[qId] = optIdx;
+            document.getElementById('validation-error').classList.add('hidden-section');
+            
+            // Atualizar UI da pergunta selecionada
+            const buttons = document.querySelectorAll(`.option-btn-${qId}`);
+            buttons.forEach((btn, idx) => {
+                const icon = document.getElementById(`icon-${qId}-${idx}`);
+                
+                // Reseta estilo
+                btn.className = `w-full text-left p-4 rounded-xl border-2 transition-all duration-200 flex items-start option-btn-${qId} bg-white border-slate-200 hover:border-blue-300 hover:bg-slate-50 text-slate-700`;
+                icon.className = `flex-shrink-0 w-6 h-6 rounded-full border-2 mr-3 flex items-center justify-center mt-0.5 border-slate-300`;
+                icon.innerHTML = '';
+                
+                // Aplica estilo se selecionado
+                if (idx === optIdx) {
+                    btn.classList.remove('bg-white', 'border-slate-200', 'hover:border-blue-300', 'hover:bg-slate-50', 'text-slate-700');
+                    btn.classList.add('bg-blue-50', 'border-blue-500', 'text-blue-900', 'font-medium', 'shadow-sm');
+                    icon.classList.remove('border-slate-300');
+                    icon.classList.add('border-blue-500', 'bg-blue-500');
+                    icon.innerHTML = `<div class="w-2.5 h-2.5 bg-white rounded-full"></div>`;
+                }
+            });
+
+            // Adicionar estilo ao card respondido
+            document.getElementById(`question-card-${qId}`).classList.add('border-blue-200');
+
+            // Atualizar contador no header
+            const answeredCount = Object.keys(answers).length;
+            document.getElementById('progress-counter').textContent = `${answeredCount}/19 répondues`;
+        }
+
+        function toggleHint(qId) {
+            if (appState !== 'QUIZ') return;
+            
+            hintsUsed.add(qId);
+            
+            const hintText = document.getElementById(`hint-text-${qId}`);
+            const hintBtn = document.getElementById(`btn-hint-${qId}`);
+            
+            if (openHints.has(qId)) {
+                openHints.delete(qId);
+                hintText.classList.add('hidden-section');
+                hintBtn.className = "flex items-center text-sm font-medium transition-colors px-3 py-1.5 rounded-lg text-yellow-600 hover:bg-yellow-50";
+            } else {
+                openHints.add(qId);
+                hintText.classList.remove('hidden-section');
+                hintBtn.className = "flex items-center text-sm font-medium transition-colors px-3 py-1.5 rounded-lg bg-yellow-100 text-yellow-800";
+            }
+        }
+
+        function validateAnswers() {
+            // Verificar se todas as 19 responderam
+            for (let i = 0; i < QUESTIONS.length; i++) {
+                if (answers[QUESTIONS[i].id] === undefined) {
+                    const errorBox = document.getElementById('validation-error');
+                    errorBox.textContent = "Você precisa responder todas as perguntas antes de validar.";
+                    errorBox.classList.remove('hidden-section');
+                    errorBox.classList.add('animate-shake');
+                    setTimeout(() => errorBox.classList.remove('animate-shake'), 300);
+                    
+                    document.getElementById(`question-card-${QUESTIONS[i].id}`).scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    return;
+                }
+            }
+
+            // Calcular score
+            score = 0;
+            QUESTIONS.forEach(q => {
+                if (answers[q.id] === q.correctIndex) score++;
+            });
+
+            appState = 'VALIDATED';
+            
+            // Ocultar botão de validar
+            document.getElementById('validation-container').classList.add('hidden-section');
+
+            // Atualizar Score Card
+            document.getElementById('score-value').textContent = score;
+            document.getElementById('score-text-value').textContent = score;
+            
+            let messageFr = "Continue à écouter et à pratiquer !";
+            let messagePt = "Continue ouvindo e praticando!";
+            if (score === 19) { messageFr = "Excellent ! Tu as tout compris !"; messagePt = "Excelente! Você entendeu tudo!"; }
+            else if (score >= 15) { messageFr = "Très bien ! Beau travail !"; messagePt = "Muito bem! Bom trabalho!"; }
+            else if (score >= 10) { messageFr = "Bon travail ! Continue à pratiquer !"; messagePt = "Bom trabalho! Continue praticando!"; }
+            
+            document.getElementById('score-message-fr').textContent = messageFr;
+            document.getElementById('score-message-pt').textContent = messagePt;
+
+            // Mostrar área de vídeo 2 e score
+            document.getElementById('post-validation-section').classList.remove('hidden-section');
+            
+            // Animar progress bar
+            setTimeout(() => {
+                document.getElementById('score-progress').style.width = `${(score / 19) * 100}%`;
+                document.getElementById('score-card').scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }, 100);
+        }
+
+        function showCorrections() {
+            appState = 'CORRECTION';
+            
+            document.getElementById('corrections-action-container').classList.add('hidden-section');
+            document.getElementById('correction-header').classList.remove('hidden-section');
+            document.getElementById('evaluation-section').classList.remove('hidden-section');
+
+            if (score === 19) {
+                document.getElementById('perfect-score-msg').classList.remove('hidden-section');
+                document.getElementById('errors-msg').classList.add('hidden-section');
+            }
+
+            QUESTIONS.forEach(q => {
+                const selectedOption = answers[q.id];
+                const isCorrect = selectedOption === q.correctIndex;
+                const card = document.getElementById(`question-card-${q.id}`);
+
+                // Desabilitar botão dica
+                document.getElementById(`hint-wrapper-${q.id}`).classList.add('hidden-section');
+
+                // Atualiza Card
+                card.className = `bg-white p-6 sm:p-8 rounded-2xl shadow-sm border transition-all duration-300 relative ${isCorrect ? 'border-green-200 bg-green-50/30' : 'border-red-200 bg-red-50/30'}`;
+
+                // Mostrar badge de acerto/erro
+                if (isCorrect) document.getElementById(`badge-correct-${q.id}`).classList.remove('hidden-section');
+                else document.getElementById(`badge-wrong-${q.id}`).classList.remove('hidden-section');
+
+                // Atualizar Botões das Opções
+                const buttons = document.querySelectorAll(`.option-btn-${q.id}`);
+                buttons.forEach((btn, optIdx) => {
+                    btn.disabled = true;
+                    btn.style.cursor = 'default';
+                    const icon = document.getElementById(`icon-${q.id}-${optIdx}`);
+                    
+                    if (optIdx === q.correctIndex) {
+                        btn.className = `w-full text-left p-4 rounded-xl border-2 transition-all duration-200 flex items-start option-btn-${q.id} bg-green-100 border-green-500 text-green-900 font-medium`;
+                        icon.className = `flex-shrink-0 w-6 h-6 rounded-full border-2 mr-3 flex items-center justify-center mt-0.5 border-green-500 bg-green-500`;
+                        icon.innerHTML = ICON_CHECK;
+                    } else if (!isCorrect && optIdx === selectedOption) {
+                        btn.className = `w-full text-left p-4 rounded-xl border-2 transition-all duration-200 flex items-start option-btn-${q.id} bg-red-50 border-red-300 text-red-700 opacity-70`;
+                        icon.className = `flex-shrink-0 w-6 h-6 rounded-full border-2 mr-3 flex items-center justify-center mt-0.5 border-red-400 bg-red-400`;
+                        icon.innerHTML = ICON_CROSS;
+                    } else {
+                        btn.className = `w-full text-left p-4 rounded-xl border-2 transition-all duration-200 flex items-start option-btn-${q.id} bg-white border-slate-100 text-slate-500 opacity-50`;
+                        icon.className = `flex-shrink-0 w-6 h-6 rounded-full border-2 mr-3 flex items-center justify-center mt-0.5 border-slate-300`;
+                        icon.innerHTML = '';
+                    }
+                });
+
+                // Mostrar Explicação se errou
+                if (!isCorrect) {
+                    document.getElementById(`wrong-choice-text-${q.id}`).textContent = q.options[selectedOption];
+                    document.getElementById(`explanation-${q.id}`).classList.remove('hidden-section');
+                }
+            });
+
+            document.getElementById('correction-header').scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+
+        function scrollToEvaluation() {
+            document.getElementById('evaluation-section').scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+
+        function setEvaluation(property, value) {
+            if (appState === 'FINAL') return;
+            evaluations[property] = value;
+            
+            // Atualiza UI
+            const buttons = document.querySelectorAll(`.eval-btn-${property}`);
+            buttons.forEach(btn => {
+                btn.classList.remove('bg-blue-600', 'text-white', 'border-blue-600', 'shadow-md');
+                btn.classList.add('bg-slate-50', 'text-slate-600', 'border-slate-200', 'hover:bg-slate-100');
+            });
+            
+            const selectedBtn = document.getElementById(`btn-eval-${property}-${value}`);
+            selectedBtn.classList.remove('bg-slate-50', 'text-slate-600', 'border-slate-200', 'hover:bg-slate-100');
+            selectedBtn.classList.add('bg-blue-600', 'text-white', 'border-blue-600', 'shadow-md');
+
+            document.getElementById('eval-error').classList.add('hidden-section');
+        }
+
+        function finishActivity() {
+            if (evaluations.oral === null || evaluations.written === null || evaluations.interpretation === null) {
+                const err = document.getElementById('eval-error');
+                err.textContent = "Por favor, preencha as três avaliações antes de terminar.";
+                err.classList.remove('hidden-section');
+                return;
+            }
+
+            appState = 'FINAL';
+            document.getElementById('evaluation-action-container').classList.add('hidden-section');
+            document.getElementById('final-section').classList.remove('hidden-section');
+
+            // Preencher dados finais
+            document.getElementById('final-score').textContent = `${score}/19`;
+            document.getElementById('final-errors').textContent = 19 - score;
+            document.getElementById('final-percentage').textContent = `${Math.round((score/19)*100)}%`;
+            document.getElementById('final-hints').textContent = hintsUsed.size;
+
+            document.getElementById('res-oral').textContent = `${evaluations.oral}/5`;
+            document.getElementById('res-written').textContent = `${evaluations.written}/5`;
+            document.getElementById('res-interpretation').textContent = `${evaluations.interpretation}/5`;
+
+            setTimeout(() => {
+                document.getElementById('final-section').scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }, 100);
+        }
+
+        function copyToClipboard() {
+            const name = document.getElementById('student-name').value.trim();
+            const percentage = Math.round((score / 19) * 100);
+            
+            const report = `LA ROUTINE DE SÉBASTIEN\nResultado da atividade de compreensão oral\n${name ? `Aluno(a): ${name}\n` : ''}Pontuação: ${score}/19\nAproveitamento: ${percentage}%\nRespostas corretas: ${score}\nRespostas incorretas: ${19 - score}\nDicas utilizadas: ${hintsUsed.size}\n\nAvaliação da experiência\nCompreensão oral: ${evaluations.oral}/5\nCompreensão escrita: ${evaluations.written}/5\nInterpretação do questionário: ${evaluations.interpretation}/5\n\nAtividade concluída!`;
+
+            if (navigator.clipboard && window.isSecureContext) {
+                navigator.clipboard.writeText(report).then(showCopySuccess).catch(err => fallbackCopyTextToClipboard(report));
+            } else {
+                fallbackCopyTextToClipboard(report);
+            }
+        }
+
+        function fallbackCopyTextToClipboard(text) {
+            const textArea = document.createElement("textarea");
+            textArea.value = text;
+            textArea.style.position = "fixed";
+            textArea.style.top = "0";
+            textArea.style.left = "0";
+            document.body.appendChild(textArea);
+            textArea.focus();
+            textArea.select();
+
+            try {
+                document.execCommand('copy');
+                showCopySuccess();
+            } catch (err) {
+                console.error('Falha ao copiar', err);
+            }
+            document.body.removeChild(textArea);
+        }
+
+        function showCopySuccess() {
+            const btn = document.getElementById('btn-copy');
+            const txt = document.getElementById('txt-copy');
+            const msg = document.getElementById('copy-success-msg');
+            
+            btn.classList.remove('bg-blue-600', 'hover:bg-blue-700');
+            btn.classList.add('bg-green-600');
+            txt.textContent = 'Résultat copié !';
+            msg.classList.remove('hidden-section');
+
+            setTimeout(() => {
+                btn.classList.add('bg-blue-600', 'hover:bg-blue-700');
+                btn.classList.remove('bg-green-600');
+                txt.textContent = 'Copier mon résultat';
+                msg.classList.add('hidden-section');
+            }, 4000);
+        }
+
+        function restartActivity() {
+            // Reset variáveis
+            appState = 'WELCOME';
+            answers = {};
+            hintsUsed = new Set();
+            openHints = new Set();
+            score = 0;
+            evaluations = { oral: null, written: null, interpretation: null };
+            document.getElementById('student-name').value = '';
+
+            // Reset UI Visibility
+            document.getElementById('welcome-view').classList.remove('hidden-section');
+            document.getElementById('app-view').classList.add('hidden-section');
+            
+            document.getElementById('validation-container').classList.remove('hidden-section');
+            document.getElementById('post-validation-section').classList.add('hidden-section');
+            document.getElementById('corrections-action-container').classList.remove('hidden-section');
+            document.getElementById('correction-header').classList.add('hidden-section');
+            document.getElementById('perfect-score-msg').classList.add('hidden-section');
+            document.getElementById('errors-msg').classList.remove('hidden-section');
+            document.getElementById('evaluation-section').classList.add('hidden-section');
+            document.getElementById('evaluation-action-container').classList.remove('hidden-section');
+            document.getElementById('final-section').classList.add('hidden-section');
+            document.getElementById('progress-counter').textContent = '0/19 répondues';
+
+            // Re-render
+            initApp();
+            
+            window.scrollTo(0, 0);
+        }
+
+        // Initialize when page loads
+        window.addEventListener('DOMContentLoaded', initApp);
+
+    </script>
+</body>
+</html>
